@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { registerMicroApps, start } from 'qiankun';
-
 @Component({
   selector: 'app-portal',
   templateUrl: './portal.component.html',
@@ -16,21 +15,21 @@ export class PortalComponent implements OnInit, AfterViewInit {
         name: 'angularApp',
         entry: '//localhost:4200',
         container: '#root',
-        activeRule: '/portal/app-angular',
+        activeRule: '/app-angular',
       },
       {
         name: 'reactApp',
         entry: '//localhost:5000',
         container: '#root',
-        activeRule: '/portal/app-react',
+        activeRule: '/app-react',
       },
     ]);
   }
 
   ngAfterViewInit(): void {
-    console.log(window.qiankunStarte);
-    if (!window.qiankunStarted) {
-      window.qiankunStarted = true;
+    console.log((window as any).qiankunStarte);
+    if (!(window as any).qiankunStarted) {
+      (window as any).qiankunStarted = true;
       start();
     }
   }

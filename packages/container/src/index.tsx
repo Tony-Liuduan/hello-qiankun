@@ -9,16 +9,16 @@ import App from './App';
 import 'antd/dist/antd.css';
 import { registerMicroApps, start } from 'qiankun';
 
-// ReactDOM.render(
-//     <ConfigProvider locale={zhCN}>
-//         <BrowserRouter basename='/'>
-//             <Switch>
-//                 <Route component={App} />
-//             </Switch>
-//         </BrowserRouter>
-//     </ConfigProvider>,
-//     document.getElementById('root'),
-// );
+ReactDOM.render(
+    <ConfigProvider locale={zhCN}>
+        <BrowserRouter basename='/'>
+            <Switch>
+                <Route component={App} />
+            </Switch>
+        </BrowserRouter>
+    </ConfigProvider>,
+    document.getElementById('root'),
+);
 
 
 registerMicroApps([
