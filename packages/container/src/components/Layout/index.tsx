@@ -5,13 +5,13 @@ import {
 } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 
-const { Content, Footer, Sider } = Layout;
+const { Content, Header } = Layout;
 
 const LayoutComponent: FC = props => {
     const location = useLocation();
-    return <Layout style={{ height: '100vh' }}>
-        <Sider>
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={[location.pathname || '/app-react']}>
+    return <Layout>
+        <Header>
+            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['/app-react']}>
                 <Menu.Item key="/app-react">
                     <Link to='/app-react'>react</Link>
                 </Menu.Item>
@@ -19,13 +19,10 @@ const LayoutComponent: FC = props => {
                     <Link to='/app-angular'>angular</Link>
                 </Menu.Item>
             </Menu>
-        </Sider>
-        <Layout>
-            <Content style={{ padding: '24px 50px', backgroundColor: '#fff' }}>
-                {props.children}
-            </Content>
-            <Footer style={{ textAlign: 'center' }}>探索 qiankun</Footer>
-        </Layout>
+        </Header>
+        <Content style={{ backgroundColor: '#fff', overflow: 'auto', marginTop: '10px' }}>
+            {props.children}
+        </Content>
     </Layout >
 }
 

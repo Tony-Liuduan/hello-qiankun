@@ -17,7 +17,7 @@ ReactDOM.render(
             </Switch>
         </BrowserRouter>
     </ConfigProvider>,
-    document.getElementById('root'),
+    document.getElementById('containerRoot'),
 );
 
 

@@ -7,7 +7,7 @@ import zhCN from 'antd/lib/locale/zh_CN';
 import App from './App';
 import 'antd/dist/antd.css';
 
-function render(props) {
+function render(props: any) {
     const { container } = props;
     ReactDOM.render(
         <ConfigProvider locale={zhCN}>
@@ -29,12 +29,12 @@ export async function bootstrap() {
     console.log('[react16] react app bootstraped');
 }
 
-export async function mount(props) {
+export async function mount(props: any) {
     console.log('[react16] props from main framework', props);
     render(props);
 }
 
-export async function unmount(props) {
+export async function unmount(props: any) {
     const { container } = props;
     ReactDOM.unmountComponentAtNode(container ? container.querySelector('#root') : document.querySelector('#root'));
 }
