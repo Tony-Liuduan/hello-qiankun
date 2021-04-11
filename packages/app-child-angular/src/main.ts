@@ -27,7 +27,6 @@ export async function mount(props: Object) {
 }
 
 export async function unmount(props: Object) {
-  console.log(props);
   // @ts-ignore
   app.destroy();
 }

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { registerMicroApps, start } from 'qiankun';
 
 @Component({
-  selector: '#root app-root',
+  selector: '#container app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -27,14 +27,12 @@ export class AppComponent implements OnInit, AfterViewInit {
         activeRule: '/app-react',
       },
     ]);
-
   }
 
   ngAfterViewInit(): void {
     this.ngZone.runOutsideAngular(() => {
-      console.log((window as any).qiankunStarte);
-      if (!(window as any).qiankunStarted) {
-        (window as any).qiankunStarted = true;
+      if (!window.qiankunStarted) {
+        window.qiankunStarted = true;
         start();
       }
     });
