@@ -1,6 +1,5 @@
 import { loadMicroApp } from 'qiankun';
 import React from 'react';
-
 export class SubApp extends React.Component {
     microApp: any = null;
 

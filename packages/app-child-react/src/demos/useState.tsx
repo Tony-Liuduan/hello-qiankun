@@ -1,4 +1,5 @@
-import React, { FC, useReducer, useState } from 'react';
+import actions from '../shared/actions';
+import React, { FC, useEffect, useReducer, useState } from 'react';
 
 let a: any[] = [];
 let b: any[] = [];
@@ -17,12 +18,18 @@ const DemoUseState: FC = props => {
     a.push(setCount1);
     b.push(dispatch);
 
-    console.log(a[0] === a[1], a[1]); // true
-    console.log(b[0] === b[1], b[1]); // true 
+    // console.log(a[0] === a[1], a[1]); // true
+    // console.log(b[0] === b[1], b[1]); // true 
+
+    useEffect(() => {
+        actions.onGlobalStateChange((state: any, prev: any) => {
+            console.log('----react app onGlobalStateChange----', prev, state);
+        });
+    }, [actions])
 
     return <>
         count1: {count1}
-        <br/>
+        <br />
         count2: {count2}
         <br />
         <button onClick={() => setCount1(count1 + 1)}>增加 count1</button>
