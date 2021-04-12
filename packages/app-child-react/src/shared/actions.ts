@@ -13,6 +13,7 @@ class Actions {
     }
 
     onGlobalStateChange(...args: any[]) {
+        console.log(this.actions);
         return this.actions.onGlobalStateChange(...args);
     }
 

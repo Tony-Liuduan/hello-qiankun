@@ -1,7 +1,7 @@
 import './public-path';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/lib/locale/zh_CN';
 import App from './App';
@@ -9,9 +9,11 @@ import 'antd/dist/antd.css';
 import actions from './shared/actions';
 
 function render(props: any) {
-    const { container } = props;
+    const { container, setGlobalState } = props;
     // 注入 actions 实例
-    actions.setActions(props);
+    if (setGlobalState) {
+            actions.setActions(props);
+    }
     ReactDOM.render(
         <ConfigProvider locale={zhCN}>
             <BrowserRouter basename={window.__POWERED_BY_QIANKUN__ ? '/app-react' : '/'}>

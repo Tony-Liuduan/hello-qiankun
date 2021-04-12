@@ -1,9 +1,15 @@
 import { NgModule } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { BoseComponent } from './components/bose/bose.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'bose',
+    component: BoseComponent,
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
