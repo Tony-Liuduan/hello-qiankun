@@ -21,19 +21,31 @@ ReactDOM.render(
 );
 
 
-registerMicroApps([
+registerMicroApps(
+    [
+        {
+            name: 'angularApp',
+            entry: '//localhost:4200',
+            container: '#root',
+            activeRule: '/app-angular',
+            props: {
+                name: 'angularApp',
+            },
+        },
+        {
+            name: 'reactApp',
+            entry: '//localhost:5000',
+            container: '#root',
+            activeRule: '/app-react',
+            props: {
+                name: 'reactApp',
+            },
+        },
+    ],
     {
-        name: 'angularApp',
-        entry: '//localhost:4200',
-        container: '#root',
-        activeRule: '/app-angular',
+        // beforeLoad: (app) => console.warn('before load----------------', app.name), // load 只在 html 加载之前执行一次, 之后不再执行
+        // beforeMount: [(app) => console.warn('before mount ++++++++', app.name)],
     },
-    {
-        name: 'reactApp',
-        entry: '//localhost:5000',
-        container: '#root',
-        activeRule: '/app-react',
-    },
-]);
+);
 
 start();

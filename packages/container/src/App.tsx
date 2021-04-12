@@ -6,6 +6,7 @@ import {
     Switch
 } from 'react-router-dom';
 import Layout from './components/Layout';
+import { SubApp } from './SubApp';
 
 const App: FC = () => {
     return <Layout>
@@ -15,6 +16,9 @@ const App: FC = () => {
             <Redirect to={{ pathname: '/app-react' }} />
         </Switch>
         <div id="root"></div>
+        <br/>
+        <br/>
+        <SubApp></SubApp>
     </Layout>
 };
 

@@ -17,7 +17,7 @@ function render(props: any) {
                 </Switch>
             </BrowserRouter>
         </ConfigProvider>,
-        container ? container.querySelector('#root') : document.querySelector('#root')
+        container ? container.querySelector('#rootreact') : document.querySelector('#rootreact')
     );
 }
 
@@ -36,5 +36,5 @@ export async function mount(props: any) {
 
 export async function unmount(props: any) {
     const { container } = props;
-    ReactDOM.unmountComponentAtNode(container ? container.querySelector('#root') : document.querySelector('#root'));
+    ReactDOM.unmountComponentAtNode(container ? container.querySelector('#rootreact') : document.querySelector('#rootreact'));
 }
