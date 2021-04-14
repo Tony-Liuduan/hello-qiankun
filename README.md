@@ -24,7 +24,8 @@
 
 ### 主-history, 子-hash/history
 
-js 跳转有效, Link 跳转不能定位到子路由
+* js history 跳转有效, Link 跳转不能定位到子路由
+* 子应用 hash 路由时, 刷新会把 # 后面值丢掉
 
 ### 主-hash, 子-history
 

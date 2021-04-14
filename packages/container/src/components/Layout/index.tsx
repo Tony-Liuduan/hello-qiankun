@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import {
     // Link,
-    useHistory,
+    useHistory, useLocation,
     // useLocation
 } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
@@ -12,6 +12,8 @@ const LayoutComponent: FC = props => {
     // const location = useLocation();
     const history = useHistory();
 
+    const location = useLocation();
+
     function handleClick() {
         history.push("/app-react/demo/use/memo");
     }
@@ -19,15 +21,16 @@ const LayoutComponent: FC = props => {
     function handleClickAngular() {
         history.push("/app-angular/bose");
     }
+
     return <Layout>
         <Header>
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['/app-react']}>
-                <Menu.Item key="/app-react">
-                    <a href="javascript:void(0)" onClick={handleClick}>app-react-memo by history push</a>
+            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={[location.pathname || '/app-react/demo/use/memo']}>
+                <Menu.Item key="/app-react/demo/use/memo">
+                    <a href={undefined} onClick={handleClick}>app-react-memo by history push</a>
                     {/* <Link to='/app-react'>react</Link> */}
                 </Menu.Item>
-                <Menu.Item key="/app-angular">
-                    <a href="javascript:void(0)" onClick={handleClickAngular}>app-anglar by history push</a>
+                <Menu.Item key="/app-angular/bose">
+                    <a href={undefined} onClick={handleClickAngular}>app-anglar by history push</a>
                     {/* <Link to='/app-angular'>angular</Link> */}
                 </Menu.Item>
             </Menu>
