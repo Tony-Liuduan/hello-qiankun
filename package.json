@@ -1,13 +1,19 @@
 {
   "name": "hello-qiankun",
   "version": "1.0.0",
+  "private": true,
   "main": "index.js",
+  "workspaces": [
+    "packages/*"
+  ],
   "repository": "https://github.com/Tony-Liuduan/hello-qiankun.git",
   "license": "MIT",
-  "dependencies": {
-    "qiankun": "^2.4.0"
+  "scripts": {
+    "init": "lerna init",
+    "bootstrap": "lerna bootstrap",
+    "dev": "lerna run --parallel start --stream"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "^9.2.0"
+    "lerna": "^4.0.0"
   }
 }

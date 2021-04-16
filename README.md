@@ -2,17 +2,35 @@
 
 ## 子应用路由组合最佳实践
 
+启动服务
+
+```sh
+yarn
+npm run dev
+```
+
+访问: <http://localhost:3100>
+
 ### 主应用
 
 #### 主应用-angular
 
+<http://localhost:4000>
+
 #### 主应用-react
+
+<http://localhost:3100>
 
 ### 微应用
 
 #### 微应用-angluar
 
+<http://localhost:4200>
+
 #### 微应用-react
+
+<http://localhost:5000>
+<http://localhost:5001>
 
 ### 遇到的坑
 
