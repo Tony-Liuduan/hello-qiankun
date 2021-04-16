@@ -59,10 +59,6 @@ module.exports = {
         headers: {
             'Access-Control-Allow-Origin': '*',
         },
-        historyApiFallback: false,
-        hot: false,
-        watchContentBase: false,
-        liveReload: false,
-        injectClient: false,
+        hot: true,
     }
 };

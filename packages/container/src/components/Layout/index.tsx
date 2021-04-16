@@ -15,7 +15,7 @@ const LayoutComponent: FC = props => {
     const location = useLocation();
 
     function handleClick() {
-        history.push("/app-react/demo/use/memo");
+        history.push("/#/app-react/demo/use/memo");
     }
 
     function handleClickAngular() {

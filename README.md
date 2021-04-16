@@ -44,6 +44,7 @@ npm run dev
 
 * js history 跳转有效, Link 跳转不能定位到子路由
 * 子应用 hash 路由时, 刷新会把 # 后面值丢掉
+* FIXME: 子-history, webpack-dev 不能开启 historyApiFallback
 
 ### 主-hash, 子-history
 

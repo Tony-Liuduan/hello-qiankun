@@ -16,11 +16,11 @@ function render(props: any) {
     }
     ReactDOM.render(
         <ConfigProvider locale={zhCN}>
-            <BrowserRouter basename={window.__POWERED_BY_QIANKUN__ ? '/app-react' : '/'}>
+            <HashRouter basename={window.__POWERED_BY_QIANKUN__ ? '/' : '/'}>
                 <Switch>
                     <Route component={App} />
                 </Switch>
-            </BrowserRouter>
+            </HashRouter>
         </ConfigProvider>,
         container ? container.querySelector('#rootreact') : document.querySelector('#rootreact')
     );

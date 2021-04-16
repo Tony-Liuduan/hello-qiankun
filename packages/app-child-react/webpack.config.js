@@ -55,14 +55,12 @@ module.exports = {
     ],
     devServer: {
         port: 5000,
-        open: true,
+        open: false,
         headers: {
             'Access-Control-Allow-Origin': '*',
         },
         historyApiFallback: false,
-        hot: false,
-        watchContentBase: false,
-        liveReload: false,
+        hot: true,
         injectClient: false,
     }
 };
