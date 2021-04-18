@@ -6,7 +6,7 @@ export class SubApp extends React.Component {
     componentDidMount() {
         this.microApp = loadMicroApp({
             name: 'qiankun-app-component',
-            entry: '//localhost:5001',
+            entry: '//localhost:3003',
             container: '#componentRoot',
             props: { brand: 'qiankun' },
         });

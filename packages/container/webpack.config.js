@@ -49,8 +49,8 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
     ],
     devServer: {
-        port: 3100,
-        open: true,
+        port: 3001,
+        open: false,
         hot: true,
         historyApiFallback: true,
     }

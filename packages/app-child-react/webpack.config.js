@@ -54,7 +54,7 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
     ],
     devServer: {
-        port: 5000,
+        port: 3002,
         open: false,
         headers: {
             'Access-Control-Allow-Origin': '*',

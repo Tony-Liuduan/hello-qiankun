@@ -16,7 +16,7 @@ function render(props: any) {
     }
     ReactDOM.render(
         <ConfigProvider locale={zhCN}>
-            <HashRouter basename={window.__POWERED_BY_QIANKUN__ ? '/' : '/'}>
+            <HashRouter basename={window.__POWERED_BY_QIANKUN__ ? '/app-react' : '/'}>
                 <Switch>
                     <Route component={App} />
                 </Switch>

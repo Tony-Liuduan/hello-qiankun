@@ -5,10 +5,6 @@ module.exports = {
             'Access-Control-Allow-Origin': '*',
         },
         historyApiFallback: false,
-        hot: false,
-        watchContentBase: false,
-        liveReload: false,
-        injectClient: false,
     },
     output: {
         library: `${appName}-[name]`,

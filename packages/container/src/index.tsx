@@ -2,7 +2,7 @@
 import 'zone.js/dist/zone';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/lib/locale/zh_CN';
 import App from './App';
@@ -12,11 +12,11 @@ import { addGlobalUncaughtErrorHandler } from 'qiankun';
 
 ReactDOM.render(
     <ConfigProvider locale={zhCN}>
-        <BrowserRouter basename='/'>
+        <HashRouter basename='/'>
             <Switch>
                 <Route component={App} />
             </Switch>
-        </BrowserRouter>
+        </HashRouter>
     </ConfigProvider>,
     document.getElementById('containerRoot'),
 );
@@ -27,18 +27,18 @@ registerMicroApps(
     [
         {
             name: 'angularApp',
-            entry: '//localhost:4200',
+            entry: '//localhost:3004',
             container: '#root',
-            activeRule: '/app-angular',
+            activeRule: '/#/app-angular',
             props: {
                 name: 'angularApp',
             },
         },
         {
             name: 'reactApp',
-            entry: '//localhost:5000',
+            entry: '//localhost:3002',
             container: '#root',
-            activeRule: '/app-react',
+            activeRule: '/#/app-react',
             props: {
                 name: 'reactApp',
             },

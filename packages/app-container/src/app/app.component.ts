@@ -16,15 +16,15 @@ export class AppComponent implements OnInit, AfterViewInit {
     registerMicroApps([
       {
         name: 'angularApp',
-        entry: '//localhost:4200',
+        entry: '//localhost:3004',
         container: '#root',
-        activeRule: '/app-angular',
+        activeRule: '/#/app-angular',
       },
       {
         name: 'reactApp',
-        entry: '//localhost:5000',
+        entry: '//localhost:3002',
         container: '#root',
-        activeRule: '/app-react',
+        activeRule: '/#/app-react',
       },
     ]);
   }

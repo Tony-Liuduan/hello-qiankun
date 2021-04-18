@@ -11,13 +11,13 @@ import { SubApp } from './SubApp';
 
 const App: FC = () => {
     return <Layout>
-        <a href="/#/app-react/demo/use/memo">app-react</a>
+        <a href="/app-react">app-react</a>
         <br />
         <Counter></Counter>
         <Switch>
-            <Route path='/#/app-react/demo/use/memo' component={null} />
-            <Route path='/app-angular/bose' component={null} />
-            {/* <Redirect to={{ pathname: '/app-react' }} /> */}
+            <Route path='/app-react' component={null} />
+            <Route path='/app-angular' component={null} />
+            <Redirect to={{ pathname: '/app-react' }} />
         </Switch>
         <div id="root"></div>
         <br />

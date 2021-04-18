@@ -9,28 +9,30 @@ yarn
 npm run dev
 ```
 
-访问: <http://localhost:3100>
+访问: <http://localhost:3001>
 
 ### 主应用
 
 #### 主应用-angular
 
-<http://localhost:4000>
+<http://localhost:4201>
 
 #### 主应用-react
 
-<http://localhost:3100>
+<http://localhost:3001>
 
 ### 微应用
 
 #### 微应用-angluar
 
-<http://localhost:4200>
+<http://localhost:3004>
+
+* FIXME: angular 作为子应用加载无法热更新, 主应用: react angular 均无效
 
 #### 微应用-react
 
-<http://localhost:5000>
-<http://localhost:5001>
+<http://localhost:3002>
+<http://localhost:3003>
 
 ### 遇到的坑
 

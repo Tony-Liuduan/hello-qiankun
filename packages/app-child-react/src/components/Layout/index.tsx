@@ -11,7 +11,7 @@ const LayoutComponent: FC = props => {
     const location = useLocation();
     return <Layout style={{ height: '100vh' }}>
         <Sider>
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={[location.pathname || '/demo/use/state']}>
+            <Menu theme="dark" mode="inline" selectedKeys={[location.pathname]}>
                 <Menu.Item key="/demo/use/state">
                     <Link to='/demo/use/state'>demo/useState</Link>
                 </Menu.Item>
