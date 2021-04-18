@@ -9,8 +9,6 @@
   "repository": "https://github.com/Tony-Liuduan/hello-qiankun.git",
   "license": "MIT",
   "scripts": {
-    "init": "lerna init",
-    "bootstrap": "lerna bootstrap",
     "dev": "lerna run --parallel start --stream"
   },
   "devDependencies": {

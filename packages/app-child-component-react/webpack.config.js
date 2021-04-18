@@ -12,7 +12,7 @@ module.exports = {
         globalObject: 'window',
         library: `${appName}-[name]`,
         libraryTarget: 'umd',
-        chunkLoadingGlobal: `webpackJsonp_${appName}`,
+        jsonpFunction: `webpackJsonp_${appName}`,
     },
     devtool: "source-map",
     resolve: {
@@ -55,7 +55,7 @@ module.exports = {
     ],
     devServer: {
         port: 5001,
-        open: true,
+        open: false,
         headers: {
             'Access-Control-Allow-Origin': '*',
         },

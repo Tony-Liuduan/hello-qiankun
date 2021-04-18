@@ -11,7 +11,7 @@ import { SubApp } from './SubApp';
 
 const App: FC = () => {
     return <Layout>
-        <a href="/#/app-react/demo/use/memo">app-react-memo</a>
+        <a href="/#/app-react/demo/use/memo">app-react</a>
         <br />
         <Counter></Counter>
         <Switch>

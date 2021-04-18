@@ -9,10 +9,10 @@ module.exports = {
     output: {
         path: path.resolve('dist'),
         publicPath: '/',
-        globalObject: 'window',
         library: `${appName}-[name]`,
         libraryTarget: 'umd',
-        chunkLoadingGlobal: `webpackJsonp_${appName}`,
+        jsonpFunction: `webpackJsonp_${appName}`,
+        globalObject: 'window',
     },
     devtool: "source-map",
     resolve: {
@@ -61,6 +61,5 @@ module.exports = {
         },
         historyApiFallback: false,
         hot: true,
-        injectClient: false,
     }
 };
