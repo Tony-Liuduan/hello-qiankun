@@ -13,6 +13,8 @@ npm run dev
 
 ### 主应用
 
+* FIXME: webpack5: 子-history, webpack-dev 不能开启 historyApiFallback, 由于webpack5 各种问题, 切换回 webpack4
+
 #### 主应用-angular
 
 <http://localhost:4201>
@@ -46,7 +48,6 @@ npm run dev
 
 * js history 跳转有效, Link 跳转不能定位到子路由
 * 子应用 hash 路由时, 刷新会把 # 后面值丢掉
-* FIXME: 子-history, webpack-dev 不能开启 historyApiFallback
 * 缺点: 父子跳转, 子子跳转都要用 js history 跳转
   
 ### 主-hash, 子-history
