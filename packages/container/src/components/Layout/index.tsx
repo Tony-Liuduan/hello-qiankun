@@ -19,6 +19,9 @@ const LayoutComponent: FC = props => {
                 <Menu.Item key="app-angular">
                     <Link to='/app-angular'>app-angular</Link>
                 </Menu.Item>
+                <Menu.Item key="counter">
+                    <Link to='/counter'>counter</Link>
+                </Menu.Item>
             </Menu>
         </Header>
         <Content style={{ backgroundColor: '#fff', overflow: 'auto', marginTop: '10px' }}>

@@ -23,20 +23,21 @@ import DemoUseDebugValue from './demos/useDebugValue';
 const App: FC = () => {
     return <Layout>
         <Switch>
-            <Route path='/demo/use/state' component={DemoUseState} />
-            <Route path='/demo/use/effect' component={DemoUseEffect} />
-            <Route path='/demo/use/ref' component={DemoUseRef} />
-            <Route path='/demo/use/previous' component={DemoUsePrevious} />
-            <Route path='/demo/use/force-update' component={DemoUseForceUpdate} />
-            <Route path='/demo/use/redux' component={DemoUseRedux} />
-            <Route path='/demo/use/context' component={DemoUseContext} />
-            <Route path='/demo/use/memo' component={DemoUseMemo} />
-            <Route path='/demo/use/callback' component={DemoUseCallback} />
-            <Route path='/demo/use/event-callback' component={DemoUseEventCallback} />
-            <Route path='/demo/use/client-rect' component={DemoUseClientRect} />
-            <Route path='/demo/use/imperative-handle' component={DemoUseImperativeHandle} />
-            <Route path='/demo/use/debug-value' component={DemoUseDebugValue} />
-            <Redirect to={{ pathname: '/demo/use/state' }} />
+            <Route path='/app-react/use/state' component={DemoUseState} />
+            <Route path='/app-react/use/effect' component={DemoUseEffect} />
+            <Route path='/app-react/use/ref' component={DemoUseRef} />
+            <Route path='/app-react/use/previous' component={DemoUsePrevious} />
+            <Route path='/app-react/use/force-update' component={DemoUseForceUpdate} />
+            <Route path='/app-react/use/redux' component={DemoUseRedux} />
+            <Route path='/app-react/use/context' component={DemoUseContext} />
+            <Route path='/app-react/use/memo' component={DemoUseMemo} />
+            <Route path='/app-react/use/callback' component={DemoUseCallback} />
+            <Route path='/app-react/use/event-callback' component={DemoUseEventCallback} />
+            <Route path='/app-react/use/client-rect' component={DemoUseClientRect} />
+            <Route path='/app-react/use/imperative-handle' component={DemoUseImperativeHandle} />
+            <Route path='/app-react/use/debug-value' component={DemoUseDebugValue} />
+            <Route path='/app-angular' component={null} />
+            <Redirect to={{ pathname: '/app-react/use/state' }} />
         </Switch>
     </Layout>
 };

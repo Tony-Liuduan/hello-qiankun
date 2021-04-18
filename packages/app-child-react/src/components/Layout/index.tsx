@@ -12,44 +12,47 @@ const LayoutComponent: FC = props => {
     return <Layout style={{ height: '100vh' }}>
         <Sider>
             <Menu theme="dark" mode="inline" selectedKeys={[location.pathname]}>
-                <Menu.Item key="/demo/use/state">
-                    <Link to='/demo/use/state'>demo/useState</Link>
+                <Menu.Item key="/app-angular">
+                    <Link to='/app-angular'>app-angular</Link>
                 </Menu.Item>
-                <Menu.Item key="/demo/use/effect">
-                    <Link to='/demo/use/effect'>demo/useEffect</Link>
+                <Menu.Item key="/app-react/use/state">
+                    <Link to='/app-react/use/state'>app-react/useState</Link>
                 </Menu.Item>
-                <Menu.Item key="/demo/use/ref">
-                    <Link to='/demo/use/ref'>demo/useRef</Link>
+                <Menu.Item key="/app-react/use/effect">
+                    <Link to='/app-react/use/effect'>app-react/useEffect</Link>
                 </Menu.Item>
-                <Menu.Item key="/demo/use/previous">
-                    <Link to='/demo/use/previous'>demo/usePrevious</Link>
+                <Menu.Item key="/app-react/use/ref">
+                    <Link to='/app-react/use/ref'>app-react/useRef</Link>
                 </Menu.Item>
-                <Menu.Item key="/demo/use/force-update">
-                    <Link to='/demo/use/force-update'>demo/useForceUpdate</Link>
+                <Menu.Item key="/app-react/use/previous">
+                    <Link to='/app-react/use/previous'>app-react/usePrevious</Link>
                 </Menu.Item>
-                <Menu.Item key="/demo/use/redux">
-                    <Link to='/demo/use/redux'>demo/useRedux</Link>
+                <Menu.Item key="/app-react/use/force-update">
+                    <Link to='/app-react/use/force-update'>app-react/useForceUpdate</Link>
                 </Menu.Item>
-                <Menu.Item key="/demo/use/context">
-                    <Link to='/demo/use/context'>demo/useContext</Link>
+                <Menu.Item key="/app-react/use/redux">
+                    <Link to='/app-react/use/redux'>app-react/useRedux</Link>
                 </Menu.Item>
-                <Menu.Item key="/demo/use/memo">
-                    <Link to='/demo/use/memo'>demo/useMemo</Link>
+                <Menu.Item key="/app-react/use/context">
+                    <Link to='/app-react/use/context'>app-react/useContext</Link>
                 </Menu.Item>
-                <Menu.Item key="/demo/use/callback">
-                    <Link to='/demo/use/callback'>demo/useCallback</Link>
+                <Menu.Item key="/app-react/use/memo">
+                    <Link to='/app-react/use/memo'>app-react/useMemo</Link>
                 </Menu.Item>
-                <Menu.Item key="/demo/use/event-callback">
-                    <Link to='/demo/use/event-callback'>demo/useEventCallback</Link>
+                <Menu.Item key="/app-react/use/callback">
+                    <Link to='/app-react/use/callback'>app-react/useCallback</Link>
                 </Menu.Item>
-                <Menu.Item key="/demo/use/client-rect">
-                    <Link to='/demo/use/client-rect'>demo/useClienRect</Link>
+                <Menu.Item key="/app-react/use/event-callback">
+                    <Link to='/app-react/use/event-callback'>app-react/useEventCallback</Link>
                 </Menu.Item>
-                <Menu.Item key="/demo/use/imperative-handle">
-                    <Link to='/demo/use/imperative-handle'>demo/useImperativeHandle</Link>
+                <Menu.Item key="/app-react/use/client-rect">
+                    <Link to='/app-react/use/client-rect'>app-react/useClienRect</Link>
                 </Menu.Item>
-                <Menu.Item key="/demo/use/debug-value">
-                    <Link to='/demo/use/debug-value'>demo/useDebugValue</Link>
+                <Menu.Item key="/app-react/use/imperative-handle">
+                    <Link to='/app-react/use/imperative-handle'>app-react/useImperativeHandle</Link>
+                </Menu.Item>
+                <Menu.Item key="/app-react/use/debug-value">
+                    <Link to='/app-react/use/debug-value'>app-react/useDebugValue</Link>
                 </Menu.Item>
             </Menu>
         </Sider>

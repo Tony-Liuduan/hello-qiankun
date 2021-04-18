@@ -10,20 +10,21 @@ import { Counter } from './Counter';
 import { SubApp } from './SubApp';
 
 const App: FC = () => {
-    return <Layout>
-        <a href="/app-react">app-react</a>
+    return <>
+        <Layout>
+            <Switch>
+                <Route path='/app-react' component={null} />
+                <Route path='/app-angular' component={null} />
+                <Route path='/counter' component={Counter} />
+                <Redirect to={{ pathname: '/app-react' }} />
+            </Switch>
+            <div id="root"></div>
+        </Layout>
         <br />
-        <Counter></Counter>
-        <Switch>
-            <Route path='/app-react' component={null} />
-            <Route path='/app-angular' component={null} />
-            <Redirect to={{ pathname: '/app-react' }} />
-        </Switch>
-        <div id="root"></div>
         <br />
-        <br />
+        <div>----------------footer----------------</div>
         <SubApp></SubApp>
-    </Layout>
+    </>
 };
 
 export default App;
