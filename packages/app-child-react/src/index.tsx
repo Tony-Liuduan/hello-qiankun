@@ -12,7 +12,7 @@ function render(props: any) {
     const { container, setGlobalState } = props;
     // 注入 actions 实例
     if (setGlobalState) {
-            actions.setActions(props);
+        actions.setActions(props);
     }
     ReactDOM.render(
         <ConfigProvider locale={zhCN}>

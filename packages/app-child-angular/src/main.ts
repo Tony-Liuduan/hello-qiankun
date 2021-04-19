@@ -9,13 +9,15 @@ if (environment.production) {
 }
 
 let app: void | NgModuleRef<AppModule>;
-async function render() {
+async function render(props) {
+  // TODO: 注册全局 service, 管理登录信息 by props
+  console.log(props);
   app = await platformBrowserDynamic()
     .bootstrapModule(AppModule)
     .catch(err => console.error(err));
 }
 if (!(window as any).__POWERED_BY_QIANKUN__) {
-  render();
+  render({});
 }
 
 export async function bootstrap(props: Object) {
@@ -23,7 +25,7 @@ export async function bootstrap(props: Object) {
 }
 
 export async function mount(props: Object) {
-  render();
+  render(props);
 }
 
 export async function unmount(props: Object) {

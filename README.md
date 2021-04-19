@@ -140,7 +140,7 @@ location / {
 ## qiankun load js 步骤
 
 1. fetch html, html 不能缓存, 需要 cors 支持
-2. fetch js, 缓存在内存中, 需要 cors 支持
+2. fetch js, 缓存在内存中, 需要 cors 支持 (浏览器支持500M)
 3. async defer 检查
 4. 全部 load 完成后, 按顺序 eval 执行 js
 
@@ -165,3 +165,10 @@ export async function mount(props: Object) {
 export async function unmount(props: Object) {
 }
 ```
+
+
+## 父子应用参数传递
+
+1. 在 registerMicroApps 中通过 props 传递给子应用
+2. 挂载到主应用 window 上, 全局可访问
+3. 需要交互通信时, 可使用 initGlobalState
