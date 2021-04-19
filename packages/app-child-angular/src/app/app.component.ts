@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Inject, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Authentication, AuthenticationToken } from './auth';
 
 @Component({
   selector: '#rootangular app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app-child-angular';
 
-  constructor(private router: Router) {
-  }
+  constructor(
+    @Inject(AuthenticationToken) private user$: Observable<Authentication>,
+  ) { }
 
-  jump() {
-    this.router.navigateByUrl('/app-react');
+  ngOnInit(): void {
+    this.user$.subscribe(console.log);
   }
 }

@@ -3,6 +3,7 @@ import { enableProdMode, NgModuleRef } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import actions from './shared/actions';
 
 if (environment.production) {
   enableProdMode();
@@ -10,8 +11,10 @@ if (environment.production) {
 
 let app: void | NgModuleRef<AppModule>;
 async function render(props) {
-  // TODO: 注册全局 service, 管理登录信息 by props
-  console.log(props);
+  // 注入 actions 实例
+  if (props) {
+    actions.setActions(props);
+  }
   app = await platformBrowserDynamic()
     .bootstrapModule(AppModule)
     .catch(err => console.error(err));
@@ -21,14 +24,14 @@ if (!(window as any).__POWERED_BY_QIANKUN__) {
 }
 
 export async function bootstrap(props: Object) {
-  console.log(props);
 }
 
 export async function mount(props: Object) {
   render(props);
 }
 
-export async function unmount(props: Object) {
+export async function unmount(_props: Object) {
+  actions.offGlobalStateChange();
   // @ts-ignore
   app.destroy();
 }

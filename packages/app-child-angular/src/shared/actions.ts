@@ -23,7 +23,7 @@ class Actions {
         setGlobalState: emptyAction,
     };
 
-    setActions({ onGlobalStateChange, setGlobalState, offGlobalStateChange, name, userInfo }: any) {
+    setActions({ onGlobalStateChange, setGlobalState, offGlobalStateChange, name, userInfo }) {
         this.actions = {
             onGlobalStateChange: onGlobalStateChange || emptyAction,
             offGlobalStateChange: offGlobalStateChange || emptyAction,
@@ -46,10 +46,9 @@ class Actions {
     }
 
     onGlobalStateChange(callback: Function, fireImmediately?: boolean) { // fireImmediately = true 立即触发 callback, fireImmediately = false, 需要等 set 之后才能触发
-        this.offGlobalStateChange();
-        return this.actions.onGlobalStateChange((state: any, prevState: any) => {
-            console.log("微应用观察者 react app：改变前的值为 ", prevState);
-            console.log("微应用观察者 react app：改变后的值为 ", state);
+        return this.actions.onGlobalStateChange((state, prevState) => {
+            console.log("微应用观察者 angular app：改变前的值为 ", prevState);
+            console.log("微应用观察者 angular app：改变后的值为 ", state);
             this.parentState$.next(state);
             return callback(state, prevState);
         }, fireImmediately);
