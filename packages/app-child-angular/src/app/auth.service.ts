@@ -13,6 +13,7 @@ export class AuthService {
 
     getUserInfo(): Observable<Authentication> {
         if (window.__POWERED_BY_QIANKUN__) {
+            actions.setGlobalState({ count: actions.globalState$.getValue()?.count + 1 });
             if (actions.globalProps?.userInfo?.name) {
                 return of(actions.globalProps.userInfo);
             }
