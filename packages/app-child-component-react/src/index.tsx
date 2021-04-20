@@ -1,11 +1,17 @@
 import './public-path';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
+import App from './App';
 
 function render(props: any) {
     const { container } = props;
     ReactDOM.render(
-        <div>react 组件</div>,
+        <HashRouter>
+            <Switch>
+                <Route component={App} />
+            </Switch>
+        </HashRouter>,
         container ? container.querySelector('#subRoot') : document.querySelector('#subRoot')
     );
 }

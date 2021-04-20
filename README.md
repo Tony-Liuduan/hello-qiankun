@@ -171,3 +171,5 @@ export async function unmount(props: Object) {
 1. 在 registerMicroApps 中通过 props 传递给子应用
 2. 挂载到主应用 window 上, 全局可访问
 3. 需要交互通信时, 可使用 initGlobalState, 详见: `packages/app-child-angular/src/shared/actions.ts`
+
+## qiankun 嵌套
