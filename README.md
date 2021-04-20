@@ -29,6 +29,7 @@ npm run dev
 
 <http://localhost:3004>
 
+* app-root id 不支持大写 !!! 不支持大写 !!! 不支持大写 !!!
 * FIXME: angular 作为子应用加载无法热更新, 主应用: react angular 均无效
 
 #### 微应用-react
@@ -173,3 +174,21 @@ export async function unmount(props: Object) {
 3. 需要交互通信时, 可使用 initGlobalState, 详见: `packages/app-child-angular/src/shared/actions.ts`
 
 ## qiankun 嵌套
+
+1. 子应用安装 qiankun
+2. 子应用给孙应用注册路由
+    这里有个坑: 这里的 `activeRule` 路由必须是二级路由, 保证先加载子应用再加载孙应用
+
+    ```js
+    registerMicroApps([
+      {
+        name: 'angularLeafApp',
+        entry: '//localhost:3005',
+        container: '#leafroot',
+        activeRule: '#/app-angular/app-leaf-angular',
+      },
+    ]);
+    ```
+
+3. 将孙应用路由前缀统一为 `app-angular`
+4. 正常按子应用改造孙应用

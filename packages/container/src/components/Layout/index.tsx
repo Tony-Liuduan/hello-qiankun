@@ -7,9 +7,15 @@ import { Layout, Menu } from 'antd';
 
 const { Content, Header } = Layout;
 
+window.addEventListener('hashchange', (e) => {
+    console.log('hashchange', e);
+});
+
+
 const LayoutComponent: FC = props => {
     const location = useLocation();
 
+    console.log('-----', location.pathname.split('/')[1]);
     return <Layout>
         <Header>
             <Menu theme="dark" mode="horizontal" selectedKeys={[location.pathname.split('/')[1]]}>

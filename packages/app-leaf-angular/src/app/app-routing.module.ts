@@ -1,33 +1,34 @@
 import { NgModule } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { BoseComponent } from './components/bose/bose.component';
+import { LeafComponent } from './components/leaf/leaf.component';
 import { EmptyComponent } from './components/empty/empty.component';
+import { TestComponent } from './components/test/test.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'app-angular',
+    redirectTo: 'app-angular/app-leaf-angular/leaf',
     pathMatch: 'full',
   },
   {
     path: 'app-angular',
     children: [
       {
-        path: '',
-        redirectTo: 'bose',
-        pathMatch: 'full',
-      },
-      {
-        path: 'bose',
-        component: BoseComponent,
-      },
-      {
         path: 'app-leaf-angular',
-        component: EmptyComponent,
+        children: [
+          {
+            path: 'leaf',
+            component: LeafComponent,
+          },
+          {
+            path: 'test',
+            component: TestComponent,
+          },
+        ],
       },
-    ],
+    ]
   },
   {
     path: '**',
@@ -38,7 +39,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
-  // @ts-ignore
   // providers: [{ provide: APP_BASE_HREF, useValue: window.__POWERED_BY_QIANKUN__ ? '/app-angular' : '/' }]
 })
 export class AppRoutingModule { }

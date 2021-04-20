@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app-child-angular": {
+    "app-leaf-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/app-child-angular",
+            "outputPath": "dist/app-leaf-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -74,21 +74,21 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "app-child-angular:build:serve",
+            "browserTarget": "app-leaf-angular:build:serve",
             "disableHostCheck": true,
             "host": "0.0.0.0",
-            "port": 3004
+            "port": 3005
           },
           "configurations": {
             "production": {
-              "browserTarget": "app-child-angular:build:production"
+              "browserTarget": "app-leaf-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app-child-angular:build"
+            "browserTarget": "app-leaf-angular:build"
           }
         },
         "test": {
@@ -125,18 +125,17 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "app-child-angular:serve"
+            "devServerTarget": "app-leaf-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "app-child-angular:serve:production"
+              "devServerTarget": "app-leaf-angular:serve:production"
             }
           }
         }
       }
-    }
-  },
-  "defaultProject": "app-child-angular",
+    }},
+  "defaultProject": "app-leaf-angular",
   "cli": {
     "analytics": false
   }
