@@ -2,6 +2,7 @@ import { AfterViewInit, Component, Inject, NgZone, OnInit } from '@angular/core'
 import { registerMicroApps, start } from 'qiankun';
 import { Observable } from 'rxjs';
 import { Authentication, AuthenticationToken } from './auth';
+import img from '../assets/logo.png';
 
 @Component({
   selector: '#rootangular app-root',
@@ -10,6 +11,8 @@ import { Authentication, AuthenticationToken } from './auth';
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'app-child-angular';
+
+  img = img;
 
   constructor(
     @Inject(AuthenticationToken) private user$: Observable<Authentication>,

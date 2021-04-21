@@ -1,5 +1,6 @@
 import actions from '../shared/actions';
 import React, { FC, useEffect, useReducer, useState } from 'react';
+import imgURL from '../assets/logo.png';
 
 let a: any[] = [];
 let b: any[] = [];
@@ -34,6 +35,13 @@ const DemoUseState: FC = props => {
         <br />
         <button onClick={() => setCount1(count1 + 1)}>增加 count1</button>
         <button onClick={() => setCount2(count2 + 1)}>增加 count2</button>
+        <div>
+            <img
+                src={imgURL}
+                height="200"
+                width="200"
+            />
+        </div>
     </>
 }
 

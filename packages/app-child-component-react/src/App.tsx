@@ -17,6 +17,7 @@ const App: FC = () => {
         <br />
         <Link to='/app-angular'>/app-angular</Link>
         <div>
+            adfsdf
             app-react-content, 经过验证通过 loadMicroApp 加载的应用, 应用站内不能有自己的路由
             <Switch>
                 <Route path='/app-react-component/a' component={ComponentA} />

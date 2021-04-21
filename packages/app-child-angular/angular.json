@@ -32,7 +32,12 @@
             ],
             "scripts": [],
             "customWebpackConfig": {
-              "path": "custom-webpack.config.js"
+              "path": "custom-webpack.config.js",
+              "mergeRules": {
+                "module": {
+                  "rules": "prepend"
+                }
+              }
             }
           },
           "configurations": {
@@ -63,11 +68,13 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "deployUrl": "http://localhost:3004/"
             },
             "serve": {
               "optimization": false,
-              "aot": false
+              "aot": false,
+              "deployUrl": "http://localhost:3004/"
             }
           }
         },

@@ -72,6 +72,7 @@ const App: FC = () => {
                 <Route path='/app-react' component={null} />
                 <Route path='/app-angular' component={null} />
                 <Route path='/counter' component={Counter} />
+                <Route path='/*' component={Counter} />
                 <Redirect to={{ pathname: '/app-react' }} />
             </Switch>
             <div id="root"></div>

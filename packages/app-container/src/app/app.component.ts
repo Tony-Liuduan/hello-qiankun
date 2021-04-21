@@ -1,6 +1,6 @@
 import { AfterViewInit, NgZone } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { registerMicroApps, start } from 'qiankun';
+import { loadMicroApp, registerMicroApps, start } from 'qiankun';
 
 @Component({
   selector: '#container app-root',
@@ -9,6 +9,7 @@ import { registerMicroApps, start } from 'qiankun';
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'app-container';
+  microApp: import("single-spa").Parcel;
 
   constructor(private readonly ngZone: NgZone) { }
 
@@ -35,6 +36,13 @@ export class AppComponent implements OnInit, AfterViewInit {
         window.qiankunStarted = true;
         start();
       }
+    });
+
+    this.microApp = loadMicroApp({
+      name: 'qiankun-app-component',
+      entry: '//localhost:3003',
+      container: '#componentRoot',
+      props: { brand: 'qiankun' },
     });
   }
 }

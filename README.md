@@ -93,11 +93,17 @@ headers: {
 
 ## https://segmentfault.com/a/1190000012550346
 ## html js css 都需要配置
-location / {  
-    add_header Access-Control-Allow-Origin 'http://foo.example';
-    add_header Access-Control-Allow-Credentials 'true';
-    add_header Access-Control-Allow-Methods 'GET, POST, PUT, DELETE, HEAD';
-    add_header Access-Control-Allow-Headers 'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization';
+map $http_origin $allow_origin {
+    default "";
+    "~^(https?://localhost(:[0-9]+)?)" $1;
+    "~^(https?://127.0.0.1(:[0-9]+)?)" $1; 
+    "~^(https?://([\w-]+.)?[\w-]+.xxx.com)" $1;  #允许一级和二级域名
+}
+location / {
+    add_header 'Access-Control-Allow-Origin' $allow_origin;
+    add_header 'Access-Control-Allow-Credentials' 'true';
+    add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, HEAD';
+    add_header 'Access-Control-Allow-Headers' 'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization';
 
     if ($request_method = 'OPTIONS') {
         return 204;

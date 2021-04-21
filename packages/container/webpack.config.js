@@ -52,6 +52,11 @@ module.exports = {
         port: 3001,
         open: false,
         hot: true,
-        historyApiFallback: true,
+        historyApiFallback: false,
+        disableHostCheck: true,
+        host: "0.0.0.0",
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+        },
     }
 };

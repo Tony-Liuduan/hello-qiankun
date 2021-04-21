@@ -37,6 +37,7 @@ const App: FC = () => {
             <Route path='/app-react/use/imperative-handle' component={DemoUseImperativeHandle} />
             <Route path='/app-react/use/debug-value' component={DemoUseDebugValue} />
             <Route path='/app-angular' component={null} />
+            <Route path='/counter' component={null} />
             <Redirect to={{ pathname: '/app-react/use/state' }} />
         </Switch>
     </Layout>

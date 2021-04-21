@@ -55,10 +55,12 @@ module.exports = {
     ],
     devServer: {
         port: 3003,
+        disableHostCheck: true,
+        host: "0.0.0.0",
         open: false,
         headers: {
             'Access-Control-Allow-Origin': '*',
         },
-        hot: true,
+        hot: false,
     }
 };

@@ -40,6 +40,17 @@ module.exports = {
                     }
                 ]
             },
+            {
+                test: /\.(?:jpg|png|gif)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192
+                        }
+                    }
+                ]
+            }
         ],
     },
     plugins: [
@@ -61,5 +72,7 @@ module.exports = {
         },
         historyApiFallback: false,
         hot: true,
+        disableHostCheck: true,
+        host: "0.0.0.0",
     }
 };
