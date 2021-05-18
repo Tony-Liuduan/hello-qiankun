@@ -18,7 +18,7 @@
 </div>
 
 <a href="javascript:void(0)"></a>
-<a href="page.html"></a>
+<a href>123123</a>
 <a href="/page.html"></a>
 <a href="http://a.com/page.html"></a>
 <a href="{{img}}"></a>
@@ -28,7 +28,9 @@
 
 <div>
     <img
-        [src]="'assets/logo.png'"
+        [src]="
+            'assets/logo.png'
+        "
         height="200"
         width="200"
     >
@@ -40,11 +42,25 @@
         height="200"
         width="200"
     >
+
+    <img
+        src='assets/logo.png'
+        height="200"
+        width="200"
+    >
+
+    <img
+        [src]="img | json"
+        height="200"
+        width="200"
+    >
 </div>
 
 <div>
     <img
-        src="assets/logo.png"
+        src="
+            assets/logo.png
+        "
         height="300"
         width="200"
     >

@@ -43,6 +43,7 @@ module.exports = cliConfig => {
         );
     }
 
+    console.log(config.mode);
     config.module = {
         ...config.module,
         rules: [
