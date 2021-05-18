@@ -1,6 +1,6 @@
 import { InjectionToken } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { shareReplay } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 
 export const AuthenticationToken = new InjectionToken<Authentication>(

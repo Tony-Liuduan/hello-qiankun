@@ -32,12 +32,7 @@
             ],
             "scripts": [],
             "customWebpackConfig": {
-              "path": "custom-webpack.config.js",
-              "mergeRules": {
-                "module": {
-                  "rules": "prepend"
-                }
-              }
+              "path": "custom-webpack.config.js"
             }
           },
           "configurations": {
@@ -48,15 +43,15 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "aot": true,
-              "optimization": true,
+              "aot": false,
+              "optimization": false,
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
+              "buildOptimizer": false,
               "budgets": [
                 {
                   "type": "initial",

@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -9,7 +8,7 @@ import { Authentication } from './auth';
     providedIn: 'root',
 })
 export class AuthService {
-    constructor(private http: HttpClient) { }
+    constructor() { }
 
     getUserInfo(): Observable<Authentication> {
         if (window.__POWERED_BY_QIANKUN__) {

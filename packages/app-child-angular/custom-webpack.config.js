@@ -1,7 +1,6 @@
 const appName = require('./package.json').name;
 const path = require('path');
 
-console.log(path.resolve('src/assets'));
 const commonConfig = {
     devServer: {
         headers: {
@@ -17,86 +16,52 @@ const commonConfig = {
         jsonpFunction: `webpackJsonp_${appName}`,
         globalObject: 'window',
     },
-    module: {
-        rules: [
-            {
-                test: /\.html$/i,
-                loader: 'html-loader',
-                options: {
-                    preprocessor: async (content, loaderContext) => {
-                        console.log('preprocessor================================', content, loaderContext);
-                        let result;
-
-                        try {
-                            result = await Handlebars.compile(content)({
-                                firstname: 'Value',
-                                lastname: 'OtherValue',
-                            });
-                        } catch (error) {
-                            await loaderContext.emitError(error);
-
-                            return content;
-                        }
-
-                        return result;
-                    },
-                },
-            },
-            // {
-            //     test: /\.html$/,
-            //     loaders: [
-            //         "html?" + JSON.stringify({
-            //             attrs: ["img:src", "img:ng-src"]
-            //         })
-            //     ]
-            // },
-            // {
-            //     test: /\.(png|jpe?g|gif|webp)$/i,
-            //     use: [
-            //         {
-            //             loader: 'file-loader',
-            //             options: {
-            //                 name: '[name].[ext]',
-            //                 publicPath: 'http://localhost:3004/assets',
-            //             },
-            //         },
-            //     ],
-            // },
-            // {
-            //     test: /\.(?:jpg|png|gif)$/,
-            //     use: [
-            //         {
-            //             loader: 'url-loader',
-            //             options: {
-            //                 limit: 819233,
-            //                 fallback: {
-            //                     loader: 'file-loader',
-            //                     options: {
-            //                         // name: 'assets/[name].[hash:8].[ext]',
-            //                         publicPath: '//localhost:3004/',
-            //                     },
-            //                 },
-            //             }
-            //         }
-            //     ]
-            // }
-        ],
-    },
 };
 
-// module.exports = commonConfig;
-
 const { merge } = require('webpack-merge');
+const { AngularCompilerPlugin } = require("@ngtools/webpack");
+
+const ANGULAR_COMPILER_PLUGIN_OPTIONS = {
+    directTemplateLoading: false
+};
 
 module.exports = cliConfig => {
     const config = merge(cliConfig, commonConfig);
-    // config.module.rules[0].options.name = 'assets/[name].[ext]';
-    // config.module.rules[0].options.publicPath = 'http://localhost:3004/';
-    config.module.rules[0].options.outputPath = 'assets';
-    // config.module.rules[0].options.useRelativePath = true;
-    // console.log(config.module.rules[0]);
 
+    config.plugins = config.plugins ?? [];
 
-    // console.log(config.module.rules);
+    const acpIndex = config.plugins.findIndex(plugin => plugin instanceof AngularCompilerPlugin);
+    if (acpIndex !== -1) {
+        const acp = config.plugins[acpIndex];
+        config.plugins.splice(acpIndex, 1, new AngularCompilerPlugin({ ...acp.options, ...ANGULAR_COMPILER_PLUGIN_OPTIONS }));
+    } else {
+        config.plugins.push(
+            new AngularCompilerPlugin({
+                tsConfigPath: './tsconfig.app.json',
+                ...ANGULAR_COMPILER_PLUGIN_OPTIONS,
+            })
+        );
+    }
+
+    config.module = {
+        ...config.module,
+        rules: [
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: path.resolve("./loader/html-src-loader.js"),
+                    },
+                    'raw-loader', // 加载文件原始内容（utf-8）
+                ]
+            },
+            {
+                test: /\.svg$/,
+                use: ['raw-loader'],
+            },
+            ...config.module?.rules ?? [],
+        ]
+    };
+
     return config;
 };

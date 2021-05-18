@@ -23,14 +23,14 @@ if (!window.__POWERED_BY_QIANKUN__) {
   render({});
 }
 
-export async function bootstrap(props: Object) {
+export async function bootstrap() {
 }
 
-export async function mount(props: Object) {
+export async function mount(props: object) {
   render(props);
 }
 
-export async function unmount(_props: Object) {
+export async function unmount() {
   actions.offGlobalStateChange();
   // @ts-ignore
   app.destroy();
